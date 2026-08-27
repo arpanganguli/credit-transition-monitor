@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 def calculate_ratios(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
 
@@ -20,12 +19,6 @@ def calculate_ratios(df: pd.DataFrame) -> pd.DataFrame:
 
     df["ebitda_margin"] = (
         df["ebitda"] / df["revenue"]
-    )
-
-    df["expected_loss"] = (
-        df["ead"]
-        * df["pd"]
-        * df["lgd"]
     )
 
     return df

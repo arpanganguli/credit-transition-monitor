@@ -7,7 +7,7 @@ SRC_DIR = PROJECT_DIR / "src"
 if SRC_DIR.is_dir():
     sys.path.insert(0, str(SRC_DIR))
 
-from synthetic_portfolio_generator import create_synthetic_portfolio
+from data.synthetic_portfolio_generator import create_synthetic_portfolio
 
 def find_project_root(marker: str = "pyproject.toml") -> Path:
     path = Path(__file__).resolve().parent.parent.parent
