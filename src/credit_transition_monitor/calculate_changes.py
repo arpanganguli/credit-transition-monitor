@@ -26,4 +26,12 @@ def calculate_changes(df: pd.DataFrame) -> pd.DataFrame:
         group["revenue"].pct_change()
     )
 
+    df["delta_leverage_change_pct"] = (
+        group["leverage"].pct_change()
+    )
+
+    df["delta_interest_cover_change_pct"] = (
+        group["interest_cover"].pct_change()
+    )
+
     return df
