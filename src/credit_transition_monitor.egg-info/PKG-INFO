@@ -1,9 +1,0 @@
-Metadata-Version: 2.4
-Name: credit-transition-monitor
-Version: 0.1.0
-Summary: Private credit early-warning and covenant monitoring engine
-Requires-Python: >=3.11
-License-File: LICENSE
-Requires-Dist: numpy
-Requires-Dist: pandas
-Dynamic: license-file
