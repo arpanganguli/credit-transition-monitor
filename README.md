@@ -30,6 +30,8 @@ python -m streamlit run app/streamlit_app.py
 
 Open **http://localhost:8501**. The synthetic demo loads immediately. Network access is only needed to install dependencies; the application itself works offline. Run from the project root to pick up `.streamlit/config.toml`. Stop with Ctrl+C.
 
+The app uses an explicit light theme. Streamlit’s built-in settings/theme menu is hidden with `client.toolbarMode = "minimal"`, so clients are not offered a light/dark selector. Restart Streamlit after changing these settings.
+
 Tests:
 
 ```bash
