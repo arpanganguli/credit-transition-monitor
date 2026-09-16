@@ -1,0 +1,22 @@
+# Core MVP stack (Week 1 of the build plan): Python + Pandas + SQLite + Streamlit + Pytest.
+# SQLite and unit testing use the standard library (sqlite3, unittest) plus pytest below --
+# no ORM, no separate API layer.
+
+streamlit>=1.36,<2.0
+pandas>=2.0,<3.0
+numpy>=1.24
+plotly>=5.20,<6.0
+pydantic>=2.5,<3.0
+openpyxl>=3.1          # .xlsx upload/template support
+requests>=2.31         # Companies House API client
+
+# Testing
+pytest>=7.4
+
+# Optional: enables full XBRL/iXBRL taxonomy support in data/companies_house.py.
+# Not required -- without it, that module falls back to a minimal lxml-based
+# tag scraper (lxml is installed as a transitive dependency of several
+# packages above; install it explicitly if you rely on the fallback in
+# isolation). Uncomment to enable the production-quality path:
+# arelle-release>=2.20
+lxml>=4.9
