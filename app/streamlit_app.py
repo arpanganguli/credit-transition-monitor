@@ -18,10 +18,17 @@ st.markdown("""<style>
 h1 {font-size:2.25rem!important; letter-spacing:-.06rem;}
 h2 {font-size:1.4rem!important;} h3 {font-size:1.1rem!important;}
 [data-testid="stMetric"] {background:white;border:1px solid #e3e9ef;border-radius:12px;padding:18px;}
+/* Keep text readable on light cards even with a saved dark theme. */
+[data-testid="stMetricLabel"],
+[data-testid="stMetricLabel"] *,
+[data-testid="stMetricValue"],
+[data-testid="stMetricValue"] * {color:#172B45!important;}
+[data-testid="stMetricDelta"],
+[data-testid="stMetricDelta"] * {color:#172B45!important;}
 [data-testid="stMetricValue"] {font-size:1.8rem;}
 [data-testid="stSidebar"] {border-right:1px solid #e3e9ef;}
 .eyebrow {font-size:12px;letter-spacing:2px;color:#087f8c;font-weight:700;}
-.notice {padding:10px 16px;border-left:3px solid #d3a343;background:#fff8e8;border-radius:4px;font-size:13px;margin:14px 0 22px;}
+.notice {padding:10px 16px;border-left:3px solid #d3a343;background:#fff8e8;color:#172B45!important;border-radius:4px;font-size:13px;margin:14px 0 22px;}
 </style>""",unsafe_allow_html=True)
 COLORS={"GREEN":"#21846D","AMBER":"#C38C27","RED":"#CD5959","CRITICAL":"#793F62"}
 
@@ -32,7 +39,7 @@ def money(v):
     return f"{currency} {v/1e6:,.2f}m" if abs(v)>=1e6 else f"{currency} {v:,.0f}"
 
 def chart(fig):
-    fig.update_layout(font=dict(family="Arial",color="#172B45"), paper_bgcolor="rgba(0,0,0,0)",plot_bgcolor="rgba(0,0,0,0)",margin=dict(l=10,r=10,t=38,b=10),height=320,legend=dict(orientation="h",y=1.15,x=0))
+    fig.update_layout(font=dict(family="Arial"), paper_bgcolor="rgba(0,0,0,0)",plot_bgcolor="rgba(0,0,0,0)",margin=dict(l=10,r=10,t=38,b=10),height=320,legend=dict(orientation="h",y=1.15,x=0))
     st.plotly_chart(fig,width="stretch",config={"displayModeBar":False})
 
 def ranking(frame,scenario=False):
